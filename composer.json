@@ -1,0 +1,12 @@
+{
+    "name": "user/atviri.siauliai.lt_usage_in_php",
+    "authors": [
+        {
+            "name": "Eligijus Stugys",
+            "email": "eligijus.stugys@nfq.lt"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3"
+    }
+}
