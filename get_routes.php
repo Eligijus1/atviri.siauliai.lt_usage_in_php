@@ -10,7 +10,8 @@ echo COLOR_GREEN . "\n-------------------- Begin --------------------" . COLOR_W
 $guzzleHttpClient = new GuzzleHttp\Client();
 
 try {
-    $response = $guzzleHttpClient->get("http://atviri.siauliai.lt/wp-json/",
+    //$response = $guzzleHttpClient->get("http://atviri.siauliai.lt/wp-json/",
+    $response = $guzzleHttpClient->get("http://atviri.siauliai.lt/wp-json/wp/v2",
     [
         'headers' => [
             'Accept' => 'application/json', 
@@ -24,7 +25,17 @@ try {
     $jsonObject = json_decode($response->getBody());
     
     // Print JSON:
-    print_r($jsonObject);   
+    //print_r($jsonObject);
+    //$jsonString = json_encode($jsonObject, JSON_PRETTY_PRINT);
+    //echo "\nJSON:\n" . $jsonString;
+    
+    foreach($jsonObject->routes as $route) {
+        if (!empty($route->_links)) {
+            echo "\n{$route->_links->self}";
+        }
+    }
+    
+    
 } catch (Exception $e) {
     echo COLOR_RED . "\nCaught exception: " .  $e->getMessage();
 }
