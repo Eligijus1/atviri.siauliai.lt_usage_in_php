@@ -24,17 +24,17 @@ try {
     $jsonObject = json_decode($response->getBody());
     
     // Print JSON:
-    print_r($jsonObject);   
+    //print_r($jsonObject);
+    
+    
+    foreach ($jsonObject->routes as $routeObject) {
+        echo COLOR_WHITE . "\n-----------------------------------------------\n" . COLOR_WHITE;
+        print_r( $routeObject);
+    }
+     
 } catch (Exception $e) {
     echo COLOR_RED . "\nCaught exception: " .  $e->getMessage();
 }
 echo "\n";
 echo COLOR_GREEN . "\n-------------------- End ----------------------\n" . COLOR_WHITE;
 
-// http://atviri.siauliai.lt/wp-json/wp/v2/tags
-// http://atviri.siauliai.lt/wp-json/wp/v2/categories
-// http://atviri.siauliai.lt/wp-json/wp/v2/taxonomies
-// http://atviri.siauliai.lt/wp-json/wp/v2/statuses
-// http://atviri.siauliai.lt/wp-json/wp/v2/types
-//
-// wp/v2/categories/(?P<id>[\d]+)
