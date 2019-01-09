@@ -8,6 +8,7 @@
     ],
     "require": {
         "guzzlehttp/guzzle": "^6.3",
-        "symfony/panther": "^0.2.0"
+        "symfony/panther": "^0.2.0",
+        "symfony/css-selector": "^4.2"
     }
 }
