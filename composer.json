@@ -7,6 +7,7 @@
         }
     ],
     "require": {
-        "guzzlehttp/guzzle": "^6.3"
+        "guzzlehttp/guzzle": "^6.3",
+        "symfony/panther": "^0.2.0"
     }
 }
